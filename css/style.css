@@ -1,5 +1,5 @@
 nav {
-  background-color: #333;
+  background-color: black;
   height: 50px;
 }
 
@@ -46,16 +46,16 @@ body {
 }
 
 .profile-photo {
-  background-color: black;
+  background-color: white;
 }
 
 .full-name {
-  background-color: #089a96;
+  background-color: #dbf574;
   opacity: 80%;
 }
 
 .links {
-  background-color: #089a96;
+  background-color: #dbf574;
   opacity: 80%;
 }
 
