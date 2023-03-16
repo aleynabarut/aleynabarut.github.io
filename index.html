@@ -1,59 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Sekme Başlığı</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<html lang="en">
+    <head>
+    <title>ALEYNA BARUT</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aleyna Barut's personal website">
+    <meta name="keywords" content="Aleyna Barut, Aleyna Barut's personal website">
+    <meta name="author" content="Aleyna Barut">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-    <body>
-        <header>
-            <div class="kutu">
-                <a href="#" class="logo">ALEYNA BARUT</a>
-                <ul class="menu">
-                    <li class="mevcut">
-                        <a href="#">Anasayfa</a>
-                    </li>
-                    <li>
-                        <a href="#">Portfolyo</a>
-                    </li>
-                    <li>
-                        <a href="#">Hakkımda</a>
-                    </li>
-                    <li>
-                        <a href="#">İletişim</a>
-                    </li>
-                </ul>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<table class="center">
+    <tr class="profile-photo">
+        <td rowspan="5"><img src="images/profile.jpg" alt="Profile Photo" style="width: 360px"></td>
+    </tr>
+    <tr class="full-name">
+        <td>ALEYNA BARUT</td>
+    </tr>
+    <tr class="links">
+        <td>
+            <a href="https://github.com/aleynabarut">
+                <img src="images/githublogo.png"
+                     alt="Github Icon" width="30" height="30">
+            </a>
+            <a href="https://www.linkedin.com/in/aleyna-barut-b87154194/">
+                <img src="images/linkedinlogo.png"
+                     alt="LinkedIn Icon" width="30" height="30">
+            </a>
+            <a href="https://www.youtube.com/channel/UCYkraxQBM78ffVwtrBl1ciQ">
+                <img src="images/youtubelogo.png"
+                     alt="YOUTUBE Icon" width="30" height="30">
+            </a>
+        </td>
+    </tr>
+    <tr class="bio">
+        <td width="400px">
+            <div>I am a 3rd-year computer engineering student at Marmara University. At the same time, I work part-time
+                as a back-end developer at SmartIQ. So far, I have developed rest APIs with spring boot. I used spring
+                security, Redis cache and apache Kafka, and I also wrote integration tests with cucumber and selenium. I
+                ran the tests I wrote on a remote server using docker.<br>
+                <a style="background-color:#b6e934;" href="mailto:aleynabarut5@gmail.com/">Here is my mail address.</a>
+                <br>
+                <a style="background-color:#c2d726;" href="https://github.com/aleynabarut">Here is my GitHub account.</a>
             </div>
-        </header>
-        <main>
-            <div class="kutu">
-                <h1>ALEYNA BARUT</h1>
-                <img src="images/profile.jpg" class="foto" />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et sodales diam. Proin vehicula dui sed urna ullamcorper pretium. Nulla facilisi. Sed a fringilla ex. Donec vel rutrum nisi. Phasellus at viverra diam, quis scelerisque purus. Sed lobortis eros sed leo sagittis, quis pellentesque dui cursus. Cras pharetra sapien orci, at fringilla dolor ultrices a.</p>
-                <p>Cras dignissim tempor neque, eu ullamcorper felis convallis ac. Maecenas nec ultricies felis, sit amet vulputate nibh. Aliquam urna diam, eleifend nec dictum non, vulputate in mi. Vestibulum vitae convallis tellus. Proin accumsan consequat orci vulputate hendrerit. Suspendisse sit amet ante ac nibh placerat faucibus ut a mauris.</p>
-                <h2>EĞİTİM BİLGİLERİ</h2>
-                <p>Sed iaculis justo tortor, nec interdum odio cursus id. Suspendisse ex lacus, egestas et nisl congue, malesuada luctus nisl. Integer sed purus id nisi fermentum facilisis. Sed maximus dapibus magna, quis viverra lacus rutrum ut. Vivamus aliquam quam quis arcu interdum mollis.</p>
-                <p>Duis convallis tellus vel felis molestie, maximus commodo metus fermentum. Proin nec purus non ex elementum ultrices in ac libero. Nunc nisi velit, rhoncus eu vehicula vel, faucibus quis lacus.</p>
-            </div>
-        </main>
-        <footer>
-            <div class="kutu">
-                <ul class="menu">
-                    <li class="mevcut">
-                        <a href="#">Anasayfa</a>
-                    </li>
-                    <li>
-                        <a href="#">Portfolyo</a>
-                    </li>
-                    <li>
-                        <a href="#">Hakkımda</a>
-                    </li>
-                    <li>
-                        <a href="#">İletişim</a>
-                    </li>
-                </ul>
-                <p class="copyright">Tüm Hakları Saklıdır © Site Adı 2017</p>
-            </div>
-        </footer>
-    </body>
+        </td>
+    </tr>
+</table>
+<footer>
+    <p>ALT BİLGİSİ</p>
+</footer>
+</body>
 </html>
