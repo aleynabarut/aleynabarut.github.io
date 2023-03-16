@@ -1,6 +1,7 @@
 nav {
-  background-color: black;
-  height: 50px;
+  background-color: rgb(223, 150, 25);
+  height: 40px;
+ 
 }
 
 nav ul {
@@ -86,14 +87,14 @@ table, td {
 }
 
 footer {
-  background-color:black;
+  background-color:rgb(223, 150, 25);
   color: #fff;
   text-align: center;
   padding: 20px;
   position: absolute;
   bottom: 0;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
 }
 
