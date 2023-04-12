@@ -35,24 +35,42 @@
             <img class="center" src="/images/profile.jpg" style="border-radius: 50%; height: 100px; padding:100px ;opacity:0.7; padding-bottom:140px;" />
         <p style="padding:80px;background-color:rgba(16, 16, 16, 0.6); font-size: 28px;">MERHABALAR,<br> BEN ALEYNA BARUT <br> MEKATRONİK VE BİLGİSAYAR MÜHENDİSİ <br>MARMARA ÜNİVERSİTESİ</p>
        
-        <form action="#">
-            <input type="text" placeholder="Name" required class="box">
-            <input type="email" placeholder="Email" required class="box">
-            <input type="text" placeholder="Subject" required class="box">
-            <br>
-            <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="Message.."></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-        
-        
         
         
         <footer style="padding-left:480px;padding-right:480px;background-color:rgba(16, 16, 16, 0s.6);font-size:16px;">2023 | © Tüm hakları saklıdır. </footer>
         </div>
     </div>
 
+    <script>      
+  
+        function RenkDegistir() {
+            var element = document.getElementById("p1");
+  
+            element.style.color = "purple";
+        }               
+  
+      function buton(){
+            alert("Websiteme Hoşgeldiniz");
+}
+      function medium(){
+        window.location.href = "https://medium.com/@serenaycalisir";
+      }
 
+      function myFunction() {
+        var at = document.getElementById("email").value.indexOf("@");
+
+  submitOK = "true";
+
+  if (at == -1) {
+    alert("Geçerli Değil!");
+    submitOK = "false";
+  }
+
+  if (submitOK == "false") {
+    return false;
+  }
+}
+</script>
 
 
 
