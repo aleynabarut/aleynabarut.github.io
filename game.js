@@ -42,7 +42,7 @@ function gameLoop() {
 		fruits[fruits.length - 1].image.src = fruitImage.src;
 	}
 
-	// Oyun bitiş kontrolü
+
 	if (score >= 20) {
 		gameRunning = false;
         gameOver();
@@ -64,18 +64,7 @@ function handleKeyDown(e) {
 	if (e.keyCode === 40) { // Aşağı tuş
 		moveFruits(0, 10);
     }
-    // Space tuşu ile meyve toplama
-if (e.keyCode === 32) { // Space tuşu
-	for (let i = 0; i < fruits.length; i++) {
-		const fruit = fruits[i];
-		if (isColliding(fruit, getPlayer())) {
-			score++;
-			fruits.splice(i, 1);
-			fruitsCollected++;
-			break;
-		}
-	}
-}
+
 }
 
 function handleMouseDown(e) {
