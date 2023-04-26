@@ -52,17 +52,17 @@ function gameLoop() {
 
 function handleKeyDown(e) {
 	// Yön tuşları ile hareket
-	if (e.keyCode === 37) { // Sol tuş
-		moveFruits(-10, 0);
+	if (e.keyCode === 37) { 
+		moveFruits(-20, 0);
 	}
-	if (e.keyCode === 38) { // Yukarı tuş
-		moveFruits(0, -10);
+	if (e.keyCode === 38) { 
+		moveFruits(0, -20);
 	}
-	if (e.keyCode === 39) { // Sağ tuş
-		moveFruits(10, 0);
+	if (e.keyCode === 39) { 
+		moveFruits(20, 0);
 	}
-	if (e.keyCode === 40) { // Aşağı tuş
-		moveFruits(0, 10);
+	if (e.keyCode === 40) { 
+		moveFruits(0, 20);
     }
 
 }
