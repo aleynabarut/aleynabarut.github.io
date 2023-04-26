@@ -10,7 +10,7 @@ function collectFruit(event) {
   scoreDisplay.textContent = `Score: ${score}`;
   if (fruitsCollected === 20) {
     scoreDisplay.textContent = `Score: ${score}`;
-    alert("Kazandınız!");
+    alert("TEBRİKLERR KAZANDIN");
     resetGame();
   }
 }
