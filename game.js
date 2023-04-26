@@ -5,9 +5,8 @@ const canvasHeight = 600;
 // Meyve resimleri
 const fruitImages = [
 	{ src: "C:\Users\aleyn\Documents\GitHub\aleynabarut.github.io\images\apple.png", width: 50, height: 50 },
-	{ src: "../images/fruits/banana.png", width: 50, height: 50 },
-	{ src: "../images/fruits/orange.png", width: 50, height: 50 },
-	{ src: "../images/fruits/pear.png", width: 50, height: 50 }
+	{ src: "C:\Users\aleyn\Documents\GitHub\aleynabarut.github.io\images\muz.png", width: 50, height: 50 },
+	{ src: ""C:\Users\aleyn\Documents\GitHub\aleynabarut.github.io\images\orange.png"", width: 50, height: 50 },
 ];
 
 // Oyun özellikleri
