@@ -5,3 +5,7 @@
     object-fit: contain;
     cursor: pointer;
   }
+
+  body{
+    background-color: darkorange;
+  }
