@@ -15,7 +15,7 @@ function collectFruit(event) {
   }
 }
 
-// Klavye hareketleri
+
 document.addEventListener("keydown", handleKeyDown);
 
 function moveFruits(dx, dy) {
@@ -26,7 +26,7 @@ function moveFruits(dx, dy) {
   }
   }
   function handleKeyDown(e) {
-    // Yön tuşları ile hareket
+   
     if (e.keyCode === 37) { // Sol tuş
       moveFruits(-10, 0);
     }
@@ -39,18 +39,7 @@ function moveFruits(dx, dy) {
     if (e.keyCode === 40) { // Aşağı tuş
       moveFruits(0, 10);
       }
-      // Space tuşu ile meyve toplama
-  if (e.keyCode === 32) { // Space tuşu
-    for (let i = 0; i < fruits.length; i++) {
-      const fruit = fruits[i];
-      if (isColliding(fruit, getPlayer())) {
-        score++;
-        fruits.splice(i, 1);
-        fruitsCollected++;
-        break;
-      }
-    }
-  }
+
   }
 
 function createFruit() {
