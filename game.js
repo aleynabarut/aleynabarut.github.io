@@ -1,10 +1,20 @@
 const gameBoard = document.querySelector("#game-board");
 const scoreDisplay = document.querySelector("#score");
 const fruits = ["images/apple.png" ,"images/muz.png"];
-                
-
 let score = 0;
 let fruitsCollected = 0;
+function collectFruit(event) {
+  event.target.remove();
+  score += 1;
+  fruitsCollected++;
+  scoreDisplay.textContent = `Score: ${score}`;
+  if (fruitsCollected === 20) {
+    scoreDisplay.textContent = `Score: ${score}`;
+    alert("Kazandınız!");
+    resetGame();
+  }
+}
+
 
 function createFruit() {
   const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
@@ -19,17 +29,6 @@ function createFruit() {
 }
 
 
-function collectFruit(event) {
-  event.target.remove();
-  score += 1;
-  fruitsCollected++;
-  scoreDisplay.textContent = `Score: ${score}`;
-  if (fruitsCollected === 20) {
-    scoreDisplay.textContent = `Score: ${score}`;
-    alert("Kazandınız!");
-    resetGame();
-  }
-}
 
 function resetGame() {
   score = 0;
