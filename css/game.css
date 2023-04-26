@@ -8,8 +8,8 @@
   
   .fruit {
     position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 1px;
+    height: 1px;
     object-fit: contain;
     cursor: pointer;
   }
