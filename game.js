@@ -37,7 +37,7 @@ function gameLoop() {
 	// Meyveleri ekrana çizme
 	for (let i = 0; i < fruits.length; i++) {
 		const fruit = fruits[i];
-		ctx.drawImage(fruit.image, fruit.x, fruit.y, fruit.width, fruit.height);
+		ctx.drawImage(fruitImages, fruit.x, fruit.y, fruit.width, fruit.height);
 	}
 
 	// Puanı ve toplam meyve sayısını güncelleme
