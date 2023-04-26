@@ -15,6 +15,43 @@ function collectFruit(event) {
   }
 }
 
+// Klavye hareketleri
+document.addEventListener("keydown", handleKeyDown);
+
+function moveFruits(dx, dy) {
+  for (let i = 0; i < fruits.length; i++) {
+  const fruit = fruits[i];
+  fruit.x += dx;
+  fruit.y += dy;
+  }
+  }
+  function handleKeyDown(e) {
+    // Yön tuşları ile hareket
+    if (e.keyCode === 37) { // Sol tuş
+      moveFruits(-10, 0);
+    }
+    if (e.keyCode === 38) { // Yukarı tuş
+      moveFruits(0, -10);
+    }
+    if (e.keyCode === 39) { // Sağ tuş
+      moveFruits(10, 0);
+    }
+    if (e.keyCode === 40) { // Aşağı tuş
+      moveFruits(0, 10);
+      }
+      // Space tuşu ile meyve toplama
+  if (e.keyCode === 32) { // Space tuşu
+    for (let i = 0; i < fruits.length; i++) {
+      const fruit = fruits[i];
+      if (isColliding(fruit, getPlayer())) {
+        score++;
+        fruits.splice(i, 1);
+        fruitsCollected++;
+        break;
+      }
+    }
+  }
+  }
 
 function createFruit() {
   const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
