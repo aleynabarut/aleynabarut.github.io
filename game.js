@@ -1,10 +1,6 @@
 const gameBoard = document.querySelector("#game-board");
 const scoreDisplay = document.querySelector("#score");
-const fruits = ["image/cilek.png",
-                "image/kiraz.png",
-                "image/muz.png",
-                "image/apple.png",
-                "image/karpuz.png"];
+const fruits = ["image/apple.png","image/muz.png","image/orange.png","image/karpuz.png"];
 
 let score = 0;
 let fruitsCollected = 0;
