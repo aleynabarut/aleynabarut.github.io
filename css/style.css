@@ -1,11 +1,11 @@
 html{
   margin:0;
   height: 100%;
-  color:white;
+  color:#fdfbfb;
   }
   
   body {
-  background-image: linear-gradient(to left ,rgba(10,12,15,0.4),rgb(220, 65, 65)),url(../images/background.png);
+  background-image: linear-gradient(to left ,rgb(20 103 228 / 44%),rgb(166 203 22 / 39%)),url(../images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #101010;
@@ -14,7 +14,7 @@ html{
   
   }
   a{
-  text-decoration-color: transparent;
+  text-decoration-color: #292121;
    }
   
   h1 {
@@ -24,7 +24,7 @@ html{
   p {
   font-family: verdana;
   font-size: 20px;
-  color: white;
+  color: #44de5c;
   }
   
   .layout {
@@ -62,7 +62,7 @@ html{
   .top-menu {
   
   
-  background-color: rgba(16, 16, 16, 0.6);
+  background-color: rgb(192 19 19);
    
   box-shadow: 1px 5px 5px rgb(246, 243, 243);
   padding-top: 5px;
@@ -192,7 +192,7 @@ html{
       width: 300px;
       background-color: rgba(16, 16, 16, 0.6);
       color: rgb(2, 0, 0);
-      box-shadow: 1px 5px 5px rgb(199, 195, 113);
+      box-shadow: 1px 5px 5px rgb(16 16 16);
       padding-top: 150px;
       padding-bottom: 30px;
       padding-left: 55px;
