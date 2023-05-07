@@ -177,6 +177,7 @@ html{
    } 
   
   .projects-container {
+      background-color: #101010;  
       display: grid;
       grid-template-columns: repeat(3, 1fr); 
       grid-template-rows: repeat(2, 1fr);
