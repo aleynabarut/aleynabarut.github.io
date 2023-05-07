@@ -190,9 +190,9 @@ html{
   
   .left-container {
       width: 300px;
-      background-color: rgba(16, 16, 16, 0.6);
+      background-color: rgb(16 16 16);
       color: rgb(2, 0, 0);
-      box-shadow: 1px 5px 5px rgb(16 16 16);
+      box-shadow: 1px 5px 5px rgb(176 50 50 / 0%);
       padding-top: 150px;
       padding-bottom: 30px;
       padding-left: 55px;
