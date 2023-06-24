@@ -102,6 +102,17 @@
                 coordinatesList.appendChild(listItem);
             });
         }
+
+        function calculateArea() {
+            if (markers.length < 3) {
+                console.log("En az 3 nokta ekleyin.");
+                return;
+            }
+
+            var area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+            var resultDiv = document.getElementById("result");
+            resultDiv.textContent = "Alan: " + area.toFixed(2) + " metrekare";
+        }
     </script>
 </head>
 <body>
@@ -109,6 +120,8 @@
     <div id="map"></div>
     <h2>Seçilen Noktaların Koordinatları:</h2>
     <ul id="coordinates-list"></ul>
+    <button onclick="calculateArea()">Alanı Hesapla</button>
+    <div id="result"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMV115Kf10lDQxqWwad7iuPWlRTr45-Pc&callback=initMap"></script>
 </body>
 </html>
