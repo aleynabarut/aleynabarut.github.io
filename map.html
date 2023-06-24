@@ -7,114 +7,26 @@
             height: 400px;
             width: 100%;
         }
+
+        #coordinates-list {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        #generate-waypoints-btn {
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+        }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMV115Kf10lDQxqWwad7iuPWlRTr45-Pc&libraries=geometry,places"></script>
     <script>
-        var map;
-        var markers = [];
-        var polygon;
-        var waypoints = [];
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 0, lng: 0},
-                zoom: 8
-            });
-
-            var currentMarker;
-
-            if (navigator.geolocation) {
-                navigator.geolocation.watchPosition(function(position) {
-                    var currentLocation = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-
-                    if (currentMarker) {
-                        currentMarker.setMap(null);
-                    }
-
-                    currentMarker = new google.maps.Marker({
-                        position: currentLocation,
-                        map: map,
-                        title: 'Şu Anki Konum',
-                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-                    });
-
-                    map.setCenter(currentLocation);
-                });
-            }
-
-            map.addListener('click', function(event) {
-                placeMarker(event.latLng);
-                updatePolygon();
-            });
-
-            document.getElementById('generate-waypoints-btn').addEventListener('click', generateWaypoints);
-        }
-
-        function placeMarker(latLng) {
-            var marker = new google.maps.Marker({
-                position: latLng,
-                map: map
-            });
-            markers.push(marker);
-        }
-
-        function updatePolygon() {
-            if (polygon) {
-                polygon.setMap(null);
-            }
-
-            var polygonCoordinates = markers.map(function(marker) {
-                return marker.getPosition();
-            });
-
-            polygon = new google.maps.Polygon({
-                paths: polygonCoordinates,
-                strokeColor: '#FF0000',
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#FF0000',
-                fillOpacity: 0.35,
-            });
-
-            polygon.setMap(map);
-        }
-
-        function generateWaypoints() {
-            if (polygon && markers.length > 0) {
-                waypoints = [];
-
-                var bounds = polygon.getBounds();
-                var numPoints = 10;
-
-                var ne = bounds.getNorthEast();
-                var sw = bounds.getSouthWest();
-                var latStep = (ne.lat() - sw.lat()) / (numPoints + 1);
-                var lngStep = (ne.lng() - sw.lng()) / (numPoints + 1);
-
-                for (var i = 1; i <= numPoints; i++) {
-                    var lat = sw.lat() + latStep * i;
-                    var lng = sw.lng() + lngStep * i;
-                    var point = new google.maps.LatLng(lat, lng);
-                    waypoints.push(point);
-                    placeMarker(point);
-                }
-
-                updateCoordinatesList();
-            }
-        }
-
-        function updateCoordinatesList() {
-            var coordinatesList = document.getElementById('coordinates-list');
-            coordinatesList.innerHTML = '';
-            markers.forEach(function(marker, index) {
-                var listItem = document.createElement('li');
-                listItem.textContent = 'Nokta ' + (index + 1) + ': Latitude: ' + marker.getPosition().lat().toFixed(6) + ', Longitude: ' + marker.getPosition().lng().toFixed(6);
-                coordinatesList.appendChild(listItem);
-            });
-        }
+        // JavaScript kodları buraya gelecek
     </script>
 </head>
 <body>
