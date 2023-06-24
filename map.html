@@ -103,13 +103,12 @@
                 waypoints = [];
 
                 var bounds = polygon.getBounds();
-
-                var numPoints = Math.ceil(google.maps.geometry.spherical.computeArea(polygon.getPath()) / 1);
+                var numPoints = 10;
 
                 var ne = bounds.getNorthEast();
                 var sw = bounds.getSouthWest();
-                var latStep = (ne.lat() - sw.lat()) / numPoints;
-                var lngStep = (ne.lng() - sw.lng()) / numPoints;
+                var latStep = (ne.lat() - sw.lat()) / (numPoints + 1);
+                var lngStep = (ne.lng() - sw.lng()) / (numPoints + 1);
 
                 var lat = sw.lat();
                 var lng = sw.lng();
@@ -117,6 +116,7 @@
                 for (var i = 0; i < numPoints; i++) {
                     lat += latStep;
                     lng += lngStep;
+
                     var point = new google.maps.LatLng(lat, lng);
                     waypoints.push(point);
                     placeMarker(point);
@@ -146,4 +146,3 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMV115Kf10lDQxqWwad7iuPWlRTr45-Pc&callback=initMap"></script>
 </body>
 </html>
-
