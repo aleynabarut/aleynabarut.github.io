@@ -103,15 +103,22 @@
             });
         }
 
-        function calculateArea() {
-            if (markers.length < 3) {
-                console.log("En az 3 nokta ekleyin.");
+        function generateQRCode() {
+            if (markers.length < 1) {
+                console.log("En az 1 nokta ekleyin.");
                 return;
             }
 
-            var area = google.maps.geometry.spherical.computeArea(polygon.getPath());
-            var resultDiv = document.getElementById("result");
-            resultDiv.textContent = "Alan: " + area.toFixed(2) + " metrekare";
+            var qrData = JSON.stringify(markers.map(function(marker) {
+                return {
+                    latitude: marker.getPosition().lat(),
+                    longitude: marker.getPosition().lng()
+                };
+            }));
+
+            var qrCodeWindow = window.open("", "_blank");
+            qrCodeWindow.document.write("<html><head><title>QR Code</title></head><body><img src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(qrData) + "'></body></html>");
+            qrCodeWindow.document.close();
         }
     </script>
 </head>
@@ -120,8 +127,7 @@
     <div id="map"></div>
     <h2>Seçilen Noktaların Koordinatları:</h2>
     <ul id="coordinates-list"></ul>
-    <button onclick="calculateArea()">Alanı Hesapla</button>
-    <div id="result"></div>
+    <button onclick="generateQRCode()">QR Kodu Oluştur</button>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMV115Kf10lDQxqWwad7iuPWlRTr45-Pc&callback=initMap"></script>
 </body>
 </html>
