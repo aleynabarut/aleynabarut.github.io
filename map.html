@@ -14,10 +14,6 @@
             list-style-type: none;
         }
 
-        #generate-waypoints-btn {
-            margin-top: 10px;
-        }
-
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 20px;
@@ -29,7 +25,6 @@
         var map;
         var markers = [];
         var polygon;
-        var waypoints = [];
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
@@ -64,9 +59,8 @@
             map.addListener('click', function(event) {
                 placeMarker(event.latLng);
                 updatePolygon();
+                updateCoordinatesList();
             });
-
-            document.getElementById('generate-waypoints-btn').addEventListener('click', generateWaypoints);
         }
 
         function placeMarker(latLng) {
@@ -98,37 +92,10 @@
             polygon.setMap(map);
         }
 
-        function generateWaypoints() {
-            if (polygon && markers.length > 0) {
-                waypoints = [];
-
-                var bounds = polygon.getBounds();
-                var numPoints = 10;
-
-                var ne = bounds.getNorthEast();
-                var sw = bounds.getSouthWest();
-                var latStep = (ne.lat() - sw.lat()) / (numPoints + 1);
-                var lngStep = (ne.lng() - sw.lng()) / (numPoints + 1);
-
-                var lat = sw.lat();
-                var lng = sw.lng();
-
-                for (var i = 0; i < numPoints; i++) {
-                    lat += latStep;
-                    lng += lngStep;
-
-                    var point = new google.maps.LatLng(lat, lng);
-                    waypoints.push(point);
-                    placeMarker(point);
-                }
-
-                updateCoordinatesList();
-            }
-        }
-
         function updateCoordinatesList() {
             var coordinatesList = document.getElementById('coordinates-list');
             coordinatesList.innerHTML = '';
+
             markers.forEach(function(marker, index) {
                 var listItem = document.createElement('li');
                 listItem.textContent = 'Nokta ' + (index + 1) + ': Latitude: ' + marker.getPosition().lat().toFixed(6) + ', Longitude: ' + marker.getPosition().lng().toFixed(6);
@@ -142,7 +109,6 @@
     <div id="map"></div>
     <h2>Seçilen Noktaların Koordinatları:</h2>
     <ul id="coordinates-list"></ul>
-    <button id="generate-waypoints-btn">Waypoint'leri Oluştur</button>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMV115Kf10lDQxqWwad7iuPWlRTr45-Pc&callback=initMap"></script>
 </body>
 </html>
