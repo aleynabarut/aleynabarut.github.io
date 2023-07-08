@@ -1,63 +1,67 @@
+@{
+    Layout = null; // Sayfa düzeni kullanmayacağımızı belirtiyoruz
+}
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>İletişim Formu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
+    <title>İletişim Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    .container {
-      width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-    }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
 
-    .container h2 {
-      text-align: center;
-    }
+        .container h2 {
+            text-align: center;
+        }
 
-    .container label {
-      display: block;
-      margin-bottom: 10px;
-    }
+        .container label {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-    .container input[type="text"],
-    .container textarea {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
+        .container input[type="text"],
+        .container textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
 
-    .container input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-    }
+        .container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
 
-    .container input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
+        .container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h2>İletişim Formu</h2>
-    <form action="#" method="post">
-      <label for="name">İsim:</label>
-      <input type="text" id="name" name="name" required>
+    <div class="container">
+        <h2>İletişim Formu</h2>
+        <form method="post">
+            <label for="name">İsim:</label>
+            <input type="text" id="name" name="name" required>
 
-      <label for="email">E-posta:</label>
-      <input type="text" id="email" name="email" required>
+            <label for="email">E-posta:</label>
+            <input type="text" id="email" name="email" required>
 
-      <label for="message">Mesaj:</label>
-      <textarea id="message" name="message" required></textarea>
+            <label for="message">Mesaj:</label>
+            <textarea id="message" name="message" required></textarea>
 
-      <input type="submit" value="Gönder">
-    </form>
-  </div>
+            <input type="submit" value="Gönder">
+        </form>
+    </div>
 </body>
 </html>
