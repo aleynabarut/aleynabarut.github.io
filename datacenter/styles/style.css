@@ -1,0 +1,148 @@
+
+/*! base css start */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --main-color:#143b88;
+    --red-color:#e84242;
+   
+}
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    outline:none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+}
+
+/*! base html codes */
+
+html{
+    font-family: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:9rem;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:var(--main-color);
+    height: 200vh;
+}
+.section{
+    padding: 5.5rem 7%;
+ 
+}
+
+
+.title{
+    font-size: 2rem;
+}
+.logo img{
+ height: 3rem;
+
+}
+
+/*!header start*/
+
+.header .logo img {
+    padding: 1 4%;
+    height: 3rem;
+    align-items: center;
+}
+.header{
+    background-color:rgb(17, 88, 169);
+    display:flex;
+    align-items: center;
+    justify-content:space-between ;
+    padding: 0 4%;
+    margin:1rem  7%;
+    border-radius: 20rem;
+    box-shadow:  0px 0px 17px -2px rgba(0, 0, 0, 0);
+    position: sticky;
+    top:2%;
+    z-index:1000;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 0.75rem;
+    color: black;
+    border-bottom :0.1rem solid transparent;
+
+}
+.header .navbar .active,
+.header .navbar a:hover{
+border-color:var(--main-color);
+padding: bottom 0.5rem ;
+}
+
+.header .navbar a.turuncuhat{
+    color:rgb(217, 170, 17);
+    padding: bottom 0.5rem ;
+}
+
+.header.buttons button{
+    cursor:pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    background-color: transparent;
+
+}
+/*!header end*/
+/*!ANASAYFa start*/
+.ANASAYFA{
+    min-height:100vh;
+    background:url(../images/datacenter.jpg)
+    no-repeat ;
+    background-size: cover;
+    background-position: center;
+    margin-top: -5.5rem;
+    display:flex;
+    align-items: center;
+  
+}
+
+
+/* Style the main section */
+/* Style the main section */
+/* Style the main section */
+.ANASAYFA .box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+    padding: 4rem 20%;
+ 
+  }
+  
+  .ANASAYFA .box-container .box {
+    padding: 2rem;
+    margin-top: 3rem;
+    background-color: rgb(223, 51, 51);
+    border-radius: 3rem;
+    min-height: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ANASAYFA .box-container .box a {
+    color: #eeedf1;
+    text-align: center;
+
+    
+  }
+  
+ 
+
+
+
+

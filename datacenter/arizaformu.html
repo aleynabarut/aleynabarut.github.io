@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arıza Formu</title>
+  <link rel="stylesheet" href="C:\Users\MONSTER\Desktop\DATACENTER\THY\styles\arizaformu.css">
+</head>
+<body>
+
+<section class="form">
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Arıza Formu</h1>
+    </div>
+    <div class="form-body">
+      <div class="form-group">
+        <label for="calismaAdi">Çalışma Adı</label>
+        <input type="text" class="form-control" id="calismaAdi" placeholder="Çalışma Adı">
+      </div>
+      <div class="form-group">
+        <label for="aciklama">Çalışma Açıklaması</label>
+        <textarea class="form-control" id="aciklama" rows="5" placeholder="Çalışma Açıklaması"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="firma">Çalışmayı Yapacak Firma</label>
+        <input type="text" class="form-control" id="firma" placeholder="Çalışmayı Yapacak Firma">
+      </div>
+      <div class="form-group">
+        <label for="planAdimlari">Planlanan Çalışma Adımları</label>
+        <textarea class="form-control" id="planAdimlari" rows="5" placeholder="Planlanan Çalışma Adımları"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="kayitNumarasi">Çalışma Kayıt Numarası</label>
+        <input type="text" class="form-control" id="kayitNumarasi" placeholder="Çalışma Kayıt Numarası">
+      </div>
+      <div class="form-group">
+        <label for="cihazTipi">Cihaz Tipi</label>
+        <input type="text" class="form-control" id="cihazTipi" placeholder="Cihaz Tipi">
+      </div>
+      <div class="form-group">
+        <label for="markaModel">Cihaz Marka Model</label>
+        <input type="text" class="form-control" id="markaModel" placeholder="Cihaz Marka Model">
+      </div>
+      <!-- Diğer alanları ekleyin... -->
+    </div>
+    <div class="form-footer">
+      <button type="button" id="kaydet" class="btn btn-primary">Kaydet</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Sayfa yüklendiğinde form verilerini yükle
+  window.onload = function() {
+    loadFormData();
+  };
+
+  // Kaydet düğmesine tıklandığında
+  document.querySelector("#kaydet").addEventListener("click", function() {
+    // Form verilerini al
+    const formData = {
+      calismaAdi: document.querySelector("#calismaAdi").value,
+      aciklama: document.querySelector("#aciklama").value,
+      firma: document.querySelector("#firma").value,
+      planAdimlari: document.querySelector("#planAdimlari").value,
+      kayitNumarasi: document.querySelector("#kayitNumarasi").value,
+      cihazTipi: document.querySelector("#cihazTipi").value,
+      markaModel: document.querySelector("#markaModel").value,
+      // Diğer alanları da ekleyin...
+    };
+
+    // Form verilerini localStorage'a kaydet
+    localStorage.setItem('formData', JSON.stringify(formData));
+
+    // Kullanıcıya bilgi ver
+    alert('Form verileri kaydedildi!');
+  });
+
+  // Form verilerini yükle
+  function loadFormData() {
+    const savedData = localStorage.getItem('formData');
+
+    if (savedData) {
+      const formData = JSON.parse(savedData);
+
+      // Form alanlarına verileri yerleştir
+      document.querySelector("#calismaAdi").value = formData.calismaAdi;
+      document.querySelector("#aciklama").value = formData.aciklama;
+      document.querySelector("#firma").value = formData.firma;
+      document.querySelector("#planAdimlari").value = formData.planAdimlari;
+      document.querySelector("#kayitNumarasi").value = formData.kayitNumarasi;
+      document.querySelector("#cihazTipi").value = formData.cihazTipi;
+      document.querySelector("#markaModel").value = formData.markaModel;
+      // Diğer alanları da ekleyin...
+    }
+  }
+</script>
+
+</body>
+</html>
