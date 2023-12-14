@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Takvim</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Takvim</h1>
 
-  <div class="container">
-    <h1>Arıza Takvimi</h1>
+  <div id="calendar"></div>
 
-    <!-- Takvim içeriği burada gösterilecek -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+      // Takvimi oluşturmak için JavaScript'i kullanın
+      var calendar = new Calendar($("#calendar"));
 
-  </div>
-
+      // Takvimi güncellemek için JavaScript'i kullanın
+      $(document).on("change", "#year", function() {
+        calendar.setYear($(this).val());
+      });
+      $(document).on("change", "#month", function() {
+        calendar.setMonth($(this).val());
+      });
+    });
+  </script>
 </body>
 </html>
