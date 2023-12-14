@@ -1,101 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
+  <title>Arıza Bildirim Formu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arıza Formu</title>
-  <link rel="stylesheet" href="C:\Users\MONSTER\Desktop\DATACENTER\THY\styles\arizaformu.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
 
-<section class="form">
-  <div class="form-container">
-    <div class="form-header">
-      <h1>Arıza Formu</h1>
-    </div>
-    <div class="form-body">
-      <div class="form-group">
-        <label for="calismaAdi">Çalışma Adı</label>
-        <input type="text" class="form-control" id="calismaAdi" placeholder="Çalışma Adı">
-      </div>
-      <div class="form-group">
-        <label for="aciklama">Çalışma Açıklaması</label>
-        <textarea class="form-control" id="aciklama" rows="5" placeholder="Çalışma Açıklaması"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="firma">Çalışmayı Yapacak Firma</label>
-        <input type="text" class="form-control" id="firma" placeholder="Çalışmayı Yapacak Firma">
-      </div>
-      <div class="form-group">
-        <label for="planAdimlari">Planlanan Çalışma Adımları</label>
-        <textarea class="form-control" id="planAdimlari" rows="5" placeholder="Planlanan Çalışma Adımları"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="kayitNumarasi">Çalışma Kayıt Numarası</label>
-        <input type="text" class="form-control" id="kayitNumarasi" placeholder="Çalışma Kayıt Numarası">
-      </div>
-      <div class="form-group">
-        <label for="cihazTipi">Cihaz Tipi</label>
-        <input type="text" class="form-control" id="cihazTipi" placeholder="Cihaz Tipi">
-      </div>
-      <div class="form-group">
-        <label for="markaModel">Cihaz Marka Model</label>
-        <input type="text" class="form-control" id="markaModel" placeholder="Cihaz Marka Model">
-      </div>
-      <!-- Diğer alanları ekleyin... -->
-    </div>
-    <div class="form-footer">
-      <button type="button" id="kaydet" class="btn btn-primary">Kaydet</button>
-    </div>
-  </div>
-</section>
+  <header>
+    <h1>Arıza Bildirim Formu</h1>
+  </header>
 
-<script>
-  // Sayfa yüklendiğinde form verilerini yükle
-  window.onload = function() {
-    loadFormData();
-  };
+  <main>
 
-  // Kaydet düğmesine tıklandığında
-  document.querySelector("#kaydet").addEventListener("click", function() {
-    // Form verilerini al
-    const formData = {
-      calismaAdi: document.querySelector("#calismaAdi").value,
-      aciklama: document.querySelector("#aciklama").value,
-      firma: document.querySelector("#firma").value,
-      planAdimlari: document.querySelector("#planAdimlari").value,
-      kayitNumarasi: document.querySelector("#kayitNumarasi").value,
-      cihazTipi: document.querySelector("#cihazTipi").value,
-      markaModel: document.querySelector("#markaModel").value,
-      // Diğer alanları da ekleyin...
-    };
+    <form action="ariza-kaydet.php" method="post">
 
-    // Form verilerini localStorage'a kaydet
-    localStorage.setItem('formData', JSON.stringify(formData));
+      <div class="form-group">
+        <label for="adsoyad">Ad Soyad</label>
+        <input type="text" id="adsoyad" name="adsoyad" required>
+      </div>
 
-    // Kullanıcıya bilgi ver
-    alert('Form verileri kaydedildi!');
-  });
+      <div class="form-group">
+        <label for="turuncu-hat-kayit-numarasi">Turuncu Hat Kayıt Numarası</label>
+        <input type="text" id="turuncu-hat-kayit-numarasi" name="turuncu-hat-kayit-numarasi" required>
+      </div>
 
-  // Form verilerini yükle
-  function loadFormData() {
-    const savedData = localStorage.getItem('formData');
+      <div class="form-group">
+        <label for="ariza-basligi">Arıza Başlığı</label>
+        <input type="text" id="ariza-basligi" name="ariza-basligi" required>
+      </div>
 
-    if (savedData) {
-      const formData = JSON.parse(savedData);
+      <div class="form-group">
+        <label for="ariza-calisma-adimleri">Arıza Çalışma Adımları</label>
+        <textarea id="ariza-calisma-adimleri" name="ariza-calisma-adimleri" required></textarea>
+      </div>
 
-      // Form alanlarına verileri yerleştir
-      document.querySelector("#calismaAdi").value = formData.calismaAdi;
-      document.querySelector("#aciklama").value = formData.aciklama;
-      document.querySelector("#firma").value = formData.firma;
-      document.querySelector("#planAdimlari").value = formData.planAdimlari;
-      document.querySelector("#kayitNumarasi").value = formData.kayitNumarasi;
-      document.querySelector("#cihazTipi").value = formData.cihazTipi;
-      document.querySelector("#markaModel").value = formData.markaModel;
-      // Diğer alanları da ekleyin...
-    }
-  }
-</script>
+      <div class="form-group">
+        <label for="ariza-aciklamasi">Arıza Açıklaması</label>
+        <textarea id="ariza-aciklamasi" name="ariza-aciklamasi" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="ariza-baslangic-tarihi">Arıza Başlangıç Tarihi</label>
+        <input type="date" id="ariza-baslangic-tarihi" name="ariza-baslangic-tarihi" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ariza-bitis-tarihi">Arıza Bitiş Tarihi</label>
+        <input type="date" id="ariza-bitis-tarihi" name="ariza-bitis-tarihi" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ariza-saati">Arıza Başlangıç Saati</label>
+        <input type="time" id="ariza-saati" name="ariza-saati" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ariza-bitis-saati">Arıza Bitiş Saati</label>
+        <input type="time" id="ariza-bitis-saati" name="ariza-bitis-saati" required>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Gönder</button>
+      </div>
+
+      <div class="form-group">
+        <label for="resimler">Resimler Yükle ve İmzaları yükle</label>
+        <input type="file" id="resimler" name="resimler[]" multiple accept="image/*">
+      </div>
+      
+    </form>
+ 
+      
+  </main>
 
 </body>
 </html>
